@@ -1,5 +1,5 @@
 {
-  "name": "ng-simple-alert",
+  "name": "m-simple-alert",
   "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^8.2.13",
