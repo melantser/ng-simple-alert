@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:check": "prettier --check 'projects/**/*.ts'",
-    "format:write": "prettier --write 'projects/**/*.ts'"
+    "format:write": "prettier --write 'projects/**/*.ts'",
+    "test:lib-coverage": "ng test ng-simple-alert --code-coverage --watch=false"
   },
   "husky": {
     "hooks": {
