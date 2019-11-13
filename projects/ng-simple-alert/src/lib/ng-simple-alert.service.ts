@@ -11,7 +11,6 @@ export interface SimpleAlertMessage {
   providedIn: 'root'
 })
 export class NgSimpleAlertService {
-
   public alertMessage$ = new Subject<SimpleAlertMessage>();
 
   public createSuccessAlert(message: string): void {
@@ -31,6 +30,6 @@ export class NgSimpleAlertService {
   }
 
   private createAlertMessage(prefix: string, message: string, color: string): SimpleAlertMessage {
-    return {prefix, message, color};
+    return { prefix, message, color };
   }
 }

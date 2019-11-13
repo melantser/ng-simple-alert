@@ -13,9 +13,7 @@ import { NgSimpleAlertService } from '../../../ng-simple-alert/src/lib/ng-simple
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-
-  constructor(private alertService: NgSimpleAlertService) {
-  }
+  constructor(private alertService: NgSimpleAlertService) {}
 
   public createSuccessMessage(): void {
     this.alertService.createSuccessAlert('Sample success message');

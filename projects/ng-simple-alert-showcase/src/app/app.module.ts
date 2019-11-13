@@ -5,14 +5,8 @@ import { NgSimpleAlertModule } from '../../../ng-simple-alert/src/lib/ng-simple-
 import { AppComponent } from './app.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    NgSimpleAlertModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, NgSimpleAlertModule],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

@@ -3,15 +3,8 @@ import { CommonModule } from '@angular/common';
 import { NgSimpleAlertComponent } from './ng-simple-alert.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [
-    NgSimpleAlertComponent
-  ],
-  exports: [
-    NgSimpleAlertComponent
-  ]
+  imports: [CommonModule],
+  declarations: [NgSimpleAlertComponent],
+  exports: [NgSimpleAlertComponent]
 })
-export class NgSimpleAlertModule {
-}
+export class NgSimpleAlertModule {}
