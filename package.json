@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "format:check": "prettier --check 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
-    "test:lib-coverage": "ng test ng-simple-alert --code-coverage --watch=false"
+    "test:lib-coverage": "ng test ng-simple-alert --code-coverage --watch=false",
+    "report-coverage:lib": "cat ./coverage/ng-simple-alert/lcov.info | codecov"
   },
   "husky": {
     "hooks": {
@@ -46,6 +47,7 @@
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
+    "codecov": "^3.6.1",
     "codelyzer": "^5.0.0",
     "husky": "^3.0.9",
     "jasmine-core": "~3.4.0",
