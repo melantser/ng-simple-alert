@@ -10,7 +10,7 @@ import { SimpleAlertMessage, NgSimpleAlertService } from './ng-simple-alert.serv
       <strong>{{ alertMessage.prefix }}!</strong> {{ alertMessage.message }}
     </div>
   `,
-  styleUrls: ['./ng-alert.component.css']
+  styleUrls: ['./ng-simple-alert.component.css']
 })
 export class NgSimpleAlertComponent implements OnInit {
 
