@@ -1,19 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { merge, Observable, Subject } from 'rxjs';
+import { SimpleAlertMessage, NgSimpleAlertService } from './ng-simple-alert.service';
 
 @Component({
-  selector: 'lib-ng-simple-alert',
+  selector: 'ng-simple-alert',
   template: `
-    <p>
-      ng-simple-alert works!
-    </p>
+    <div class="alert" *ngIf="(alertMessage$ | async) as alertMessage" [ngStyle]="{background: alertMessage.color}">
+      <span class="closebtn" (click)="closeAlert()">&times;</span>
+      <strong>{{ alertMessage.prefix }}!</strong> {{ alertMessage.message }}
+    </div>
   `,
-  styles: []
+  styleUrls: ['./ng-alert.component.css']
 })
 export class NgSimpleAlertComponent implements OnInit {
 
-  constructor() { }
+  alertMessage$: Observable<SimpleAlertMessage | boolean>;
+  close$ = new Subject<boolean>();
+
+  constructor(private alertService: NgSimpleAlertService) {
+  }
 
   ngOnInit() {
+    this.alertMessage$ = merge(this.alertService.alertMessage$, this.close$);
+  }
+
+  closeAlert(): void {
+    this.close$.next();
   }
 
 }
