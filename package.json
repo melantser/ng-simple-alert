@@ -3,15 +3,19 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
+    "copy:readme": "copyfiles ./README.md ./projects/ng-simple-alert",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:lib && npm run build:demo",
+    "build:lib": "npm run copy:readme && ng build ng-simple-alert",
+    "build:demo": "ng build ng-simple-alert-showcase --prod --base-href='https://melantser.github.io/ng-simple-alert/'",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "format:check": "prettier --check 'projects/**/*.ts'",
     "format:write": "prettier --write 'projects/**/*.ts'",
     "test:lib-coverage": "ng test ng-simple-alert --code-coverage --watch=false",
-    "report-coverage:lib": "cat ./coverage/ng-simple-alert/lcov.info | codecov"
+    "report-coverage:lib": "cat ./coverage/ng-simple-alert/lcov.info | codecov",
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/ng-simple-alert-showcase"
   },
   "husky": {
     "hooks": {
@@ -49,6 +53,7 @@
     "@types/node": "~8.9.4",
     "codecov": "^3.6.1",
     "codelyzer": "^5.0.0",
+    "copyfiles": "^2.1.1",
     "husky": "^3.0.9",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
