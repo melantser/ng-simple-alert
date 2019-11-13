@@ -1,6 +1,6 @@
 {
   "name": "ng-simple-alert",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "ng": "ng",
     "copy:readme": "copyfiles ./README.md ./projects/ng-simple-alert",
@@ -15,7 +15,12 @@
     "format:write": "prettier --write 'projects/**/*.ts'",
     "test:lib-coverage": "ng test ng-simple-alert --code-coverage --watch=false",
     "report-coverage:lib": "cat ./coverage/ng-simple-alert/lcov.info | codecov",
-    "publish:demo": "npx angular-cli-ghpages --dir=./dist/ng-simple-alert-showcase"
+    "publish:demo": "npx angular-cli-ghpages --dir=./dist/ng-simple-alert-showcase",
+    "publish:lib": "npx semantic-release",
+    "semantic-release": "semantic-release",
+    "adjust-version": "npm-run-all adjust-version:*",
+    "adjust-version:lib": "rjp projects/ng-simple-alert/package.json version $VERSION",
+    "adjust-version:main": "rjp package.json version $VERSION"
   },
   "husky": {
     "hooks": {
@@ -57,6 +62,7 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@commitlint/prompt": "^8.2.0",
+    "@semantic-release/exec": "^3.3.8",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "~8.9.4",
@@ -73,11 +79,18 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "lint-staged": "^9.4.2",
     "ng-packagr": "^5.4.0",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.19.1",
     "protractor": "~5.4.0",
+    "replace-json-property": "^1.4.1",
+    "semantic-release": "^15.13.30",
     "ts-node": "~7.0.0",
     "tsickle": "^0.37.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/melantser/ng-simple-alert.git"
   }
 }
